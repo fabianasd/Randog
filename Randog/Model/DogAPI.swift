@@ -10,16 +10,27 @@ import Foundation
 import UIKit
 
 class DogAPI {
-    enum EndPoint: String {
-        case randomImageFromAllDogsCollection = "https://dog.ceo/api/breeds/image/random"
+    enum EndPoint {
+        case randomImageFromAllDogsCollection
+        case randomImageForBreed(String)
         
         var url: URL {
-            return URL(string: self.rawValue)!
+            return URL(string: self.stringValue)!
+        }
+        
+        var stringValue: String {
+            switch self {
+            case .randomImageFromAllDogsCollection:
+                return "https://dog.ceo/api/breeds/image/random"
+            case .randomImageForBreed(let breed): "https://dog.ceo/api/breed/\(breed)/images" ///random
+            default:
+                <#code#>
+            }
         }
     }
     
-    class func requestRandomImage(completionHandler: @escaping (DogImage?, Error?) -> Void) {
-        let randomImageEndpoint = DogAPI.EndPoint.randomImageFromAllDogsCollection.url //buscou a imagem aleatoria
+    class func requestRandomImage(breed: String, completionHandler: @escaping (DogImage?, Error?) -> Void) {
+        let randomImageEndpoint = DogAPI.EndPoint.randomImageForBreed(breed).url //buscou a imagem aleatoria
         
         //inicio /** buscou uma resposta JSON contendo o URL da imagem **/
         let task = URLSession.shared.dataTask(with: randomImageEndpoint) { (data, response, error) //buscou uma resposta JSON contendo o URL da imagem
@@ -31,7 +42,9 @@ class DogAPI {
             //inicio /** exemplo com JSONDecoder: analisar o JSON usando o decoficador JSON*/
             //converteu para json
             let decoder = JSONDecoder()
+            //decodifica o JSON
             let imageData = try! decoder.decode(DogImage.self, from: data)
+            
             print(imageData)
             completionHandler(imageData, nil)
         }
