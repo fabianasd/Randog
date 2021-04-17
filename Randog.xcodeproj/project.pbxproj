@@ -15,6 +15,7 @@
 		0CC243492623CD0E00CA3004 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CC243472623CD0E00CA3004 /* Main.storyboard */; };
 		0CC2434B2623CD1100CA3004 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CC2434A2623CD1100CA3004 /* Assets.xcassets */; };
 		0CC2434E2623CD1100CA3004 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CC2434C2623CD1100CA3004 /* LaunchScreen.storyboard */; };
+		0CED28D4262A72E4001FA95E /* BreedsListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CED28D3262A72E4001FA95E /* BreedsListResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		0CC2434A2623CD1100CA3004 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CC2434D2623CD1100CA3004 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0CC2434F2623CD1100CA3004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CED28D3262A72E4001FA95E /* BreedsListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsListResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				0C67E9FF2623CFD100336473 /* DogAPI.swift */,
 				0C6A35B02625207B00E1916E /* DogImage.swift */,
+				0CED28D3262A72E4001FA95E /* BreedsListResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				0CC243462623CD0E00CA3004 /* ViewController.swift in Sources */,
 				0C6A35B12625207B00E1916E /* DogImage.swift in Sources */,
 				0CC243422623CD0E00CA3004 /* AppDelegate.swift in Sources */,
+				0CED28D4262A72E4001FA95E /* BreedsListResponse.swift in Sources */,
 				0CC243442623CD0E00CA3004 /* SceneDelegate.swift in Sources */,
 				0C67EA002623CFD100336473 /* DogAPI.swift in Sources */,
 			);

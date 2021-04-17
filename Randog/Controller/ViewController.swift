@@ -13,13 +13,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var pickerView: UIPickerView!
     
-    let breeds: [String] = ["greyhound", "poodle"]
+    var breeds: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         pickerView.dataSource = self
         pickerView.delegate = self
+        DogAPI.requestBreedsList(completionHandler: handleBreedsListResponse(breeds:error:))
     }
     //exemplo com JsonSerialization
     //            do {
@@ -30,6 +31,13 @@ class ViewController: UIViewController {
     //            } catch {
     //                print(error)
     //            }
+    
+    func handleBreedsListResponse(breeds: [String], error: Error?) {
+        self.breeds = breeds
+        DispatchQueue.main.async {
+            self.pickerView.reloadAllComponents()
+        }
+    }
     
     func handleRandomImageResponse(imageData: DogImage?, error: Error?) {
         
